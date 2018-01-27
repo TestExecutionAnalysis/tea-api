@@ -1,46 +1,49 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
-const { makeExecutableSchema } = require('graphql-tools');
 
 const logger = require('./logger');
 const { connectToDB } = require('./database');
 
-// Some fake data
-const books = [
-  {
-    title: "Harry Potter and the Sorcerer's stone",
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
-
-// The GraphQL schema in string form
-const typeDefs = `
-  type Query { books: [Book] }
-  type Book { title: String, author: String }
-`;
-
 const startServer = async () => {
-  // The resolvers
-  const resolvers = {
-    Query: { books: () => books },
-  };
+  // const { Execution, Suite } = require('./database/models');
 
-  // Put together a schema
-  const schema = makeExecutableSchema({
-    typeDefs,
-    resolvers,
-  });
+  // const newExecution = {
+  //   name: 'Run 1',
+  //   description: 'Some description',
+  //   status: 'PASS',
+  //   testApi: 'TestNG',
+  //   executionType: 'Automated',
+  //   configuration: {
+  //     browser: 'Chrome',
+  //     version: 64,
+  //   },
+  // };
+
+  // const createdExecution = await Execution.create(newExecution);
+  // console.log(createdExecution._id);
+
+  // const newSuite = {
+  //   name: 'Suite 1',
+  //   description: 'Suite description',
+  //   status: 'PASS',
+  //   execution: createdExecution._id,
+  // };
+
+  // console.log(newSuite);
+
+  // console.log(await Suite.create(newSuite));
+
+  const schema = require('./schema');
 
   // Initialize the app
   const app = express();
+  app.use(cors());
+  const buildOptions = async () => ({ schema });
 
   // The GraphQL endpoint
-  app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
+  app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions));
 
   // GraphiQL, a visual editor for queries
   app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));

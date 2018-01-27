@@ -1,0 +1,19 @@
+scalar JSON
+
+type Execution {
+  _id: ID!
+  name: String!
+  description: String
+  status: String
+  testApi: String
+  executionType: String
+  configuration: JSON
+  exception: String
+  createdAt: String
+  updatedAt: String
+  # suites: [Suite]
+}
+
+type Query {
+  Executions: [Execution]
+}
