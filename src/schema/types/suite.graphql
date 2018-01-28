@@ -9,6 +9,7 @@ type Suite {
   createdAt: String
   updatedAt: String
   execution: Execution
+  testcases: [Testcase]
 }
 
 type Query {
