@@ -5,11 +5,11 @@ type Suite {
   requirementId: String
   status: String
   configuration: JSON
-  exception: String
   createdAt: String
   updatedAt: String
   execution: Execution
   testcases: [Testcase]
+  exceptions: [Exception]
 }
 
 type Query {
@@ -27,7 +27,6 @@ input InputSuite {
   requirementId: String
   status: String
   configuration: JSON
-  exception: String
   execution: String
 }
 
@@ -37,6 +36,5 @@ input UpdateSuite {
   requirementId: String
   status: String
   configuration: JSON
-  exception: String
   execution: String
 }

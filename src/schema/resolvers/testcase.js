@@ -1,4 +1,4 @@
-const { Testcase, Suite, Teststep } = require('../../database/models');
+const { Testcase, Suite, Teststep, Exception } = require('../../database/models');
 
 module.exports = {
   Testcase: {
@@ -9,6 +9,11 @@ module.exports = {
 
     teststeps: async ({ _id }) => {
       const res = await Teststep.find({ testcase: _id });
+      return res;
+    },
+
+    exceptions: async ({ _id }) => {
+      const res = await Exception.find({ execution: _id });
       return res;
     },
   },

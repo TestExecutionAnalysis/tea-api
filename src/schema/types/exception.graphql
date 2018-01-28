@@ -1,0 +1,51 @@
+type Exception {
+  _id: ID!
+  name: String!
+  stacktrace: String!
+  exceptionType: String
+  createAt: String
+  updatedAt: String
+  execution: Execution
+  suite: Suite
+  testcase: Testcase
+  teststep: Teststep
+}
+
+type Query {
+  exceptions: [Exception]
+}
+
+type Mutation {
+  addExceptionToExecution(input: InputExecutionException): Exception
+  addExceptionToSuite(input: InputSuiteException): Exception
+  addExceptionToTestcase(input: InputTestcaseException): Exception
+  addExceptionToTeststep(input: InputTeststepException): Exception
+}
+
+input InputTeststepException {
+  name: String!
+  stacktrace: String!
+  teststep: String!
+  exceptionType: String
+}
+
+input InputTestcaseException {
+  name: String!
+  stacktrace: String!
+  testcase: String!
+  exceptionType: String
+}
+
+input InputSuiteException {
+  name: String!
+  stacktrace: String!
+  suite: String!
+  exceptionType: String
+}
+
+input InputExecutionException {
+  name: String!
+  stacktrace: String!
+  execution: String!
+  exceptionType: String
+}

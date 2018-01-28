@@ -6,6 +6,7 @@ const resolvers = [
   require('./suite'),
   require('./testcase'),
   require('./teststep'),
+  require('./exception'),
 ];
 
 module.exports = mergeResolvers(resolvers);

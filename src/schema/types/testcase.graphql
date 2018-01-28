@@ -5,11 +5,11 @@ type Testcase {
   requirementId: String
   status: String
   configuration: JSON
-  exception: String
   createdAt: String
   updatedAt: String
   suite: Suite
   teststeps: [Teststep]
+  exceptions: [Exception]
 }
 
 type Query {
@@ -27,7 +27,6 @@ input InputTestcase {
   requirementId: String
   status: String
   configuration: JSON
-  exception: String
   suite: String
 }
 
@@ -37,6 +36,5 @@ input UpdateTestcase {
   requirementId: String
   status: String
   configuration: JSON
-  exception: String
   suite: String
 }

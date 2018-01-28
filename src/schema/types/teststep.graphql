@@ -3,10 +3,10 @@ type Teststep {
   name: String!
   description: String
   status: String
-  exception: String
   createdAt: String
   updatedAt: String
   testcase: Testcase
+  exceptions: [Exception]
 }
 
 type Query {
@@ -22,7 +22,6 @@ input InputTeststep {
   name: String!
   description: String
   status: String
-  exception: String
   createdAt: String
   updatedAt: String
   testcase: String
@@ -32,7 +31,6 @@ input UpdateTeststep {
   name: String
   description: String
   status: String
-  exception: String
   createdAt: String
   updatedAt: String
   testcase: String
