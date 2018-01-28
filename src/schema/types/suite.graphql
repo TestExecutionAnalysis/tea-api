@@ -1,19 +1,16 @@
-scalar JSON
-
-type Execution {
+type Suite {
   _id: ID!
-  name: String!
+  name: String
   description: String
+  requirementId: String
   status: String
-  testApi: String
-  executionType: String
   configuration: JSON
   exception: String
   createdAt: String
   updatedAt: String
-  suites: [Suite]
+  execution: Execution
 }
 
 type Query {
-  executions: [Execution]
+  suites: [Suite]
 }

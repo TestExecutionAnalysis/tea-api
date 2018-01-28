@@ -1,12 +1,19 @@
-const { Execution } = require('../../database/models');
+const { Execution, Suite } = require('../../database/models');
 const GraphQLJSON = require('graphql-type-json');
 
 module.exports = {
   JSON: GraphQLJSON,
 
   Query: {
-    Executions: async () => {
+    executions: async () => {
       const res = await Execution.find();
+      return res;
+    },
+  },
+
+  Execution: {
+    suites: async ({ executionId }) => {
+      const res = await Suite.find({ execution: executionId });
       return res;
     },
   },
