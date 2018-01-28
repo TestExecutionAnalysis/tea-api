@@ -1,5 +1,38 @@
-type Suite {
+type Testcase {
   _id: ID!
+  name: String!
+  description: String
+  requirementId: String
+  status: String
+  configuration: JSON
+  exception: String
+  createdAt: String
+  updatedAt: String
+  suite: Suite
+}
+
+type Query {
+  testcases: [Testcase]
+}
+
+type Mutation {
+  createTestcase(input: InputTestcase): Testcase
+  updateTestcase(id: String, input: UpdateTestcase): Testcase
+}
+
+input InputTestcase {
+  name: String!
+  description: String
+  requirementId: String
+  status: String
+  configuration: JSON
+  exception: String
+  createdAt: String
+  updatedAt: String
+  suite: String
+}
+
+input UpdateTestcase {
   name: String
   description: String
   requirementId: String
@@ -8,34 +41,5 @@ type Suite {
   exception: String
   createdAt: String
   updatedAt: String
-  execution: Execution
-}
-
-type Query {
-  suites: [Suite]
-}
-
-type Mutation {
-  createSuite(input: InputSuite): Suite
-  updateSuite(id: String, input: UpdateSuite): Suite
-}
-
-input InputSuite {
-  name: String!
-  description: String
-  requirementId: String
-  status: String
-  configuration: JSON
-  exception: String
-  execution: String
-}
-
-input UpdateSuite {
-  name: String
-  description: String
-  requirementId: String
-  status: String
-  configuration: JSON
-  exception: String
-  execution: String
+  suite: String
 }

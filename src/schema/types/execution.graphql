@@ -26,9 +26,11 @@ type Mutation {
 input InputExecution {
   name: String!
   description: String
+  status: String
   testApi: String
   executionType: String
   configuration: JSON
+  exception: String
 }
 
 input UpdateExecution {
