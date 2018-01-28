@@ -29,6 +29,10 @@ executionSchema.pre('save', function preSave(next) {
   next();
 });
 
+executionSchema.pre('update', function preUpdate() {
+  this.update({}, { $set: { updatedAt: new Date() } });
+});
+
 const suiteSchema = db.Schema({
   name: String,
   description: String,
@@ -54,6 +58,10 @@ suiteSchema.pre('save', function preSave(next) {
     this.createdAt = currentDate;
   }
   next();
+});
+
+suiteSchema.pre('update', function preUpdate() {
+  this.update({}, { $set: { updatedAt: new Date() } });
 });
 
 const testcaseSchema = db.Schema({
@@ -83,6 +91,10 @@ testcaseSchema.pre('save', function preSave(next) {
   next();
 });
 
+testcaseSchema.pre('update', function preUpdate() {
+  this.update({}, { $set: { updatedAt: new Date() } });
+});
+
 const teststepSchema = db.Schema({
   name: String,
   description: String,
@@ -106,6 +118,10 @@ teststepSchema.pre('save', function preSave(next) {
     this.createdAt = currentDate;
   }
   next();
+});
+
+teststepSchema.pre('update', function preUpdate() {
+  this.update({}, { $set: { updatedAt: new Date() } });
 });
 
 const Execution = db.model('Execution', executionSchema);

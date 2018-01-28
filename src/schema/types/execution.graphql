@@ -17,3 +17,26 @@ type Execution {
 type Query {
   executions: [Execution]
 }
+
+type Mutation {
+  createExecution(input: InputExecution): Execution
+  updateExecution(id: String, input: UpdateExecution): Execution
+}
+
+input InputExecution {
+  name: String!
+  description: String
+  testApi: String
+  executionType: String
+  configuration: JSON
+}
+
+input UpdateExecution {
+  name: String
+  description: String
+  status: String
+  testApi: String
+  executionType: String
+  configuration: JSON
+  exception: String
+}

@@ -14,3 +14,26 @@ type Suite {
 type Query {
   suites: [Suite]
 }
+
+type Mutation {
+  createSuite(input: InputSuite): Suite
+  updateSuite(id: String, input: UpdateSuite): Suite
+}
+
+input InputSuite {
+  name: String!
+  description: String
+  requirementId: String
+  configuration: JSON
+  execution: String
+}
+
+input UpdateSuite {
+  name: String
+  description: String
+  requirementId: String
+  status: String
+  configuration: JSON
+  exception: String
+  execution: String
+}
