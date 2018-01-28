@@ -4,6 +4,7 @@ const resolvers = [
   require('./execution'),
   require('./suite'),
   require('./testcase'),
+  require('./teststep'),
 ];
 
 module.exports = mergeResolvers(resolvers);

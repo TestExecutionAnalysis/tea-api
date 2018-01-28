@@ -1,9 +1,14 @@
-const { Testcase, Suite } = require('../../database/models');
+const { Testcase, Suite, Teststep } = require('../../database/models');
 
 module.exports = {
   Testcase: {
     suite: async ({ suite }) => {
       const res = await Suite.findOne({ _id: suite });
+      return res;
+    },
+
+    teststeps: async ({ _id }) => {
+      const res = await Teststep.find({ testcase: _id });
       return res;
     },
   },

@@ -1,0 +1,39 @@
+type Teststep {
+  _id: ID!
+  name: String!
+  description: String
+  status: String
+  exception: String
+  createdAt: String
+  updatedAt: String
+  testcase: Testcase
+}
+
+type Query {
+  teststeps: [Teststep]
+}
+
+type Mutation {
+  createTeststep(input: InputTeststep): Teststep
+  updateTeststep(id: String, input: UpdateTeststep): Teststep
+}
+
+input InputTeststep {
+  name: String!
+  description: String
+  status: String
+  exception: String
+  createdAt: String
+  updatedAt: String
+  testcase: String
+}
+
+input UpdateTeststep {
+  name: String
+  description: String
+  status: String
+  exception: String
+  createdAt: String
+  updatedAt: String
+  testcase: String
+}

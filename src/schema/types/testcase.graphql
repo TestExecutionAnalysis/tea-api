@@ -9,6 +9,7 @@ type Testcase {
   createdAt: String
   updatedAt: String
   suite: Suite
+  teststeps: [Teststep]
 }
 
 type Query {
@@ -27,8 +28,6 @@ input InputTestcase {
   status: String
   configuration: JSON
   exception: String
-  createdAt: String
-  updatedAt: String
   suite: String
 }
 
@@ -39,7 +38,5 @@ input UpdateTestcase {
   status: String
   configuration: JSON
   exception: String
-  createdAt: String
-  updatedAt: String
   suite: String
 }
