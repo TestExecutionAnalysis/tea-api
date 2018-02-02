@@ -1912,11 +1912,11 @@ graphql-type-json@^0.1.4:
   version "0.1.4"
   resolved "https://registry.npmjs.org/graphql-type-json/-/graphql-type-json-0.1.4.tgz#89f13f5d32ce08c9a76c79fdf9c1968384d81a4e"
 
-graphql@^0.11.7:
-  version "0.11.7"
-  resolved "https://registry.npmjs.org/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
+graphql@^0.13.0-rc.1:
+  version "0.13.0-rc.1"
+  resolved "https://registry.npmjs.org/graphql/-/graphql-0.13.0-rc.1.tgz#7e392e90bfb15d483c7b462943fb0ac040bebaae"
   dependencies:
-    iterall "1.1.3"
+    iterall "1.1.x"
 
 har-schema@^1.0.5:
   version "1.0.5"
@@ -2330,13 +2330,13 @@ isstream@0.1.x, isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-iterall@1.1.3, iterall@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.npmjs.org/iterall/-/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
-
-iterall@^1.1.1:
+iterall@1.1.x, iterall@^1.1.1:
   version "1.1.4"
   resolved "https://registry.npmjs.org/iterall/-/iterall-1.1.4.tgz#0db40d38fdcf53ae14dc8ec674e62ab190d52cfc"
+
+iterall@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.npmjs.org/iterall/-/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
