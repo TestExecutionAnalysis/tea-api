@@ -2,6 +2,7 @@ type Testcase {
   _id: ID!
   name: String!
   description: String
+  groups: [String]
   requirementId: String
   status: String
   configuration: JSON
@@ -24,6 +25,7 @@ type Mutation {
 input InputTestcase {
   name: String!
   description: String
+  groups: [String]
   requirementId: String
   status: String
   configuration: JSON
@@ -33,6 +35,7 @@ input InputTestcase {
 input UpdateTestcase {
   name: String
   description: String
+  groups: [String]
   requirementId: String
   status: String
   configuration: JSON

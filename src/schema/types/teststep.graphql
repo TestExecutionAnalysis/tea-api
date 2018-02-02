@@ -2,6 +2,7 @@ type Teststep {
   _id: ID!
   name: String!
   description: String
+  groups: [String]
   status: String
   createdAt: String
   updatedAt: String
@@ -21,6 +22,7 @@ type Mutation {
 input InputTeststep {
   name: String!
   description: String
+  groups: [String]
   status: String
   createdAt: String
   updatedAt: String
@@ -30,6 +32,7 @@ input InputTeststep {
 input UpdateTeststep {
   name: String
   description: String
+  groups: [String]
   status: String
   createdAt: String
   updatedAt: String

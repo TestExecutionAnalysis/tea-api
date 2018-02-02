@@ -35,6 +35,7 @@ executionSchema.pre('update', function preUpdate() {
 const suiteSchema = db.Schema({
   name: String,
   description: String,
+  groups: [String],
   requirementId: String,
   status: String,
   configuration: Object,
@@ -65,6 +66,7 @@ suiteSchema.pre('update', function preUpdate() {
 const testcaseSchema = db.Schema({
   name: String,
   description: String,
+  groups: [String],
   requirementId: String,
   status: String,
   configuration: Object,
@@ -95,6 +97,7 @@ testcaseSchema.pre('update', function preUpdate() {
 const teststepSchema = db.Schema({
   name: String,
   description: String,
+  groups: [String],
   status: String,
   createdAt: {
     type: Date,
