@@ -7,34 +7,6 @@ const logger = require('./logger');
 const { connectToDB } = require('./database');
 
 const startServer = async () => {
-  // const { Execution, Suite } = require('./database/models');
-
-  // const newExecution = {
-  //   name: 'Run 1',
-  //   description: 'Some description',
-  //   status: 'PASS',
-  //   testApi: 'TestNG',
-  //   executionType: 'Automated',
-  //   configuration: {
-  //     browser: 'Chrome',
-  //     version: 64,
-  //   },
-  // };
-
-  // const createdExecution = await Execution.create(newExecution);
-  // console.log(createdExecution._id);
-
-  // const newSuite = {
-  //   name: 'Suite 1',
-  //   description: 'Suite description',
-  //   status: 'PASS',
-  //   execution: createdExecution._id,
-  // };
-
-  // console.log(newSuite);
-
-  // console.log(await Suite.create(newSuite));
-
   const schema = require('./schema');
 
   // Initialize the app
